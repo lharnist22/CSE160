@@ -1,20 +1,22 @@
+const POINT = 0;
+const TRIANGLE = 1;
+const CIRCLE = 2;
+
+/* Global variables to store the current settings for color, size, shape type, and segments for circles.
+*/
 let canvas;
 let gl;
 let a_Position;
 let u_FragColor;
 let u_Size;
 let g_shapesList = [];
-/* Global variables to store the current settings for color, size, shape type, and segments for circles.
-*/
 let g_selectedColor = [1.0, 1.0, 1.0, 1.0];
 let g_selectedSize = 10;
 let g_selectedType = POINT;
 let g_selectedSegments = 10;
 
 
-const POINT = 0;
-const TRIANGLE = 1;
-const CIRCLE = 2;
+
 
 var VSHADER_SOURCE = `
   attribute vec4 a_Position;
