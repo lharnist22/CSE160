@@ -2,21 +2,17 @@ let canvas;
 let ctx;
 
 function handleDrawEvent() {
-  // Clear canvas
   ctx.fillStyle = 'black';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  // Read v1
   let x1 = parseFloat(document.getElementById('v1x').value);
   let y1 = parseFloat(document.getElementById('v1y').value);
   let v1 = new Vector3([x1, y1, 0]);
 
-  // Read v2
   let x2 = parseFloat(document.getElementById('v2x').value);
   let y2 = parseFloat(document.getElementById('v2y').value);
   let v2 = new Vector3([x2, y2, 0]);
 
-  // Draw both
   drawVector(v1, 'red');
   drawVector(v2, 'blue');
 }
@@ -93,22 +89,6 @@ function handleDrawOperationEvent() {
   
 }
 
-function main() {
-  canvas = document.getElementById('example');
-  if (!canvas) {
-    console.log('Failed to retrieve the <canvas> element');
-    return;
-  }
-
-  ctx = canvas.getContext('2d');
-  if (!ctx) {
-    console.log('Failed to get the 2D context');
-    return;
-  }
-
-  handleDrawEvent();
-}
-
 function drawVector(v, color) {
   let cx = canvas.width / 2;
   let cy = canvas.height / 2;
@@ -143,4 +123,20 @@ function areaTriangle(v1, v2) {
   let cross = Vector3.cross(v1, v2);
   let area = cross.magnitude() / 2;
   return area;
+}
+
+function main() {
+  canvas = document.getElementById('example');
+  if (!canvas) {
+    console.log('Failed to retrieve the <canvas> element');
+    return;
+  }
+
+  ctx = canvas.getContext('2d');
+  if (!ctx) {
+    console.log('Failed to get the 2D context');
+    return;
+  }
+
+  handleDrawEvent();
 }

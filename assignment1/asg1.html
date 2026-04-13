@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>asg1</title>
+</head>
+<body>
+  <canvas id="webgl" width="400" height="400" style="border:1px solid black;"></canvas>
+  <p>
+  <button id="pointButton">Point</button>
+  <button id="triButton">Triangle</button>
+  <button id="circleButton">Circle</button>
+  <button id="clearButton">Clear</button>
+  <button id="drawingButton">Draw Picture</button>
+  </p>
+  <p>
+  Segments <input type="range" id="segmentSlide" min="3" max="50" value="10">
+  </p>
+  <p>
+    Red <input type="range" id="redSlide" min="0" max="100" value="100">
+    Green <input type="range" id="greenSlide" min="0" max="100" value="100">
+    Blue <input type="range" id="blueSlide" min="0" max="100" value="100">
+  </p>
+
+  <p>
+    Size <input type="range" id="sizeSlide" min="5" max="40" value="10">
+  </p>
+
+
+  <script src="lib/webgl-utils.js"></script>
+  <script src="lib/webgl-debug.js"></script>
+  <script src="lib/cuon-utils.js"></script>
+
+  <script src="Point.js"></script>
+  <script src="Triangle.js"></script>
+  <script src="Circle.js"></script>
+  <script src="asg1.js"></script>
+</body>
+</html>
