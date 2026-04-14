@@ -16,8 +16,6 @@ let g_selectedType = POINT;
 let g_selectedSegments = 10;
 
 
-
-
 var VSHADER_SOURCE = `
   attribute vec4 a_Position;
   uniform float u_Size;
@@ -127,6 +125,7 @@ function drawTriangle(vertices) {
 
 function drawPicture() {
   //This is my drawing of a house with a tree and a sun :)
+  // I used Codex here to help me out a bit with the placement and to not have it be so tedious
   gl.clear(gl.COLOR_BUFFER_BIT);
   g_shapesList = [];
 
@@ -166,9 +165,22 @@ function drawPicture() {
   gl.uniform4f(u_FragColor, 0.5, 0.25, 0.1, 1.0);
   drawTriangle([0.26, -0.7, 0.34, -0.7, 0.26, -0.5]);
   drawTriangle([0.34, -0.7, 0.34, -0.5, 0.26, -0.5]);
+
+  gl.uniform4f(u_FragColor, 1.0, 1.0, 1.0, 1.0);
+  drawTriangle([-0.95, 0.95, -0.95, 0.75, -0.90, 0.95]);
+  drawTriangle([-0.95, 0.75, -0.90, 0.75, -0.90, 0.95]);
+  drawTriangle([-0.95, 0.75, -0.95, 0.70, -0.80, 0.75]);
+  drawTriangle([-0.95, 0.70, -0.80, 0.70, -0.80, 0.75]);
+  drawTriangle([-0.75, 0.95, -0.75, 0.70, -0.70, 0.95]);
+  drawTriangle([-0.75, 0.70, -0.70, 0.70, -0.70, 0.95]);
+  drawTriangle([-0.65, 0.95, -0.65, 0.70, -0.60, 0.95]);
+  drawTriangle([-0.65, 0.70, -0.60, 0.70, -0.60, 0.95]);
+  drawTriangle([-0.75, 0.82, -0.60, 0.82, -0.75, 0.78]);
+  drawTriangle([-0.60, 0.82, -0.60, 0.78, -0.75, 0.78]);
 }
 
 function addActionsForHtmlUI() {
+  // I used Codex here to help me maake sure I added all of these properly
   document.getElementById('pointButton').onclick = function() {
     g_selectedType = POINT;
   };
