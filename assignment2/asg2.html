@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assignment 2 - 3D Animal</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 10px; }
+    canvas { display: block; margin-bottom: 10px; }
+    .controls { margin: 10px 0; }
+    .control-group { margin: 5px 0; }
+    label { display: inline-block; width: 150px; }
+  </style>
+</head>
+<body>
+  <h1>3D Blocky Animal</h1>
+  <canvas id="webgl" width="600" height="600" style="border:1px solid black;"></canvas>
+  
+  <div class="controls">
+    <div class="control-group">
+      <label>Global Rotation:</label>
+      <input type="range" id="globalRotation" min="0" max="360" value="0">
+    </div>
+    <div class="control-group">
+      <label>Front Leg Upper:</label>
+      <input type="range" id="frontLegUpper" min="-45" max="45" value="0">
+    </div>
+    <div class="control-group">
+      <label>Front Leg Lower:</label>
+      <input type="range" id="frontLegLower" min="-45" max="45" value="0">
+    </div>
+    <div class="control-group">
+      <label>Back Leg Upper:</label>
+      <input type="range" id="backLegUpper" min="-45" max="45" value="0">
+    </div>
+    <div class="control-group">
+      <label>Back Leg Lower:</label>
+      <input type="range" id="backLegLower" min="-45" max="45" value="0">
+    </div>
+    <div class="control-group">
+      <button id="animateButton">Start Animation</button>
+      <button id="resetButton">Reset View</button>
+    </div>
+    <div class="control-group">
+      <label>FPS: <span id="fpsDisplay">0</span></label>
+    </div>
+  </div>
+
+  <script src="lib/webgl-utils.js"></script>
+  <script src="lib/webgl-debug.js"></script>
+  <script src="lib/cuon-utils.js"></script>
+  <script src="lib/cuon-matrix-cse160.js"></script>
+  <script src="asg2.js"></script>
+</body>
+</html>
