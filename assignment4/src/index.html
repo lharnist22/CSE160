@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Assignment 4 - Lighting</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #1f2326;
+        color: #f2f2f2;
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 14px;
+        padding: 14px;
+      }
+
+      canvas {
+        width: 100%;
+        height: calc(100vh - 28px);
+        min-height: 540px;
+        background: #8bb7df;
+        border: 1px solid #3d454c;
+      }
+
+      .panel {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .group {
+        border: 1px solid #3d454c;
+        border-radius: 6px;
+        padding: 12px;
+        background: #2b3035;
+      }
+
+      h2 {
+        margin: 0 0 10px;
+        font-size: 16px;
+      }
+
+      label {
+        display: grid;
+        gap: 5px;
+        margin: 10px 0;
+        font-size: 13px;
+      }
+
+      input[type="range"] {
+        width: 100%;
+      }
+
+      button {
+        width: 100%;
+        margin: 5px 0;
+        padding: 8px 10px;
+        border: 1px solid #7b8791;
+        border-radius: 5px;
+        background: #e8edf2;
+        color: #1c2024;
+        cursor: pointer;
+      }
+
+      .hint {
+        font-size: 12px;
+        line-height: 1.4;
+        color: #c6d0d8;
+      }
+
+      @media (max-width: 900px) {
+        main {
+          grid-template-columns: 1fr;
+        }
+
+        canvas {
+          height: 65vh;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <canvas id="webgl" width="1000" height="700">
+        Please use a browser that supports canvas.
+      </canvas>
+
+      <aside class="panel">
+        <section class="group">
+          <h2>View</h2>
+          <p class="hint">
+            W/A/S/D move, Q/E turn, drag mouse to look, F/R add or remove map blocks.
+          </p>
+          <button id="normalToggle">Normal Visualization: Off</button>
+          <button id="lightingToggle">Lighting: On</button>
+        </section>
+
+        <section class="group">
+          <h2>Point Light</h2>
+          <button id="pointToggle">Point Light: On</button>
+          <label>
+            X
+            <input id="lightX" type="range" min="-10" max="10" step="0.1" value="3" />
+          </label>
+          <label>
+            Y
+            <input id="lightY" type="range" min="0.2" max="8" step="0.1" value="4" />
+          </label>
+          <label>
+            Z
+            <input id="lightZ" type="range" min="-10" max="10" step="0.1" value="2" />
+          </label>
+          <label>
+            Red
+            <input id="lightR" type="range" min="0" max="1" step="0.01" value="1" />
+          </label>
+          <label>
+            Green
+            <input id="lightG" type="range" min="0" max="1" step="0.01" value="0.93" />
+          </label>
+          <label>
+            Blue
+            <input id="lightB" type="range" min="0" max="1" step="0.01" value="0.82" />
+          </label>
+        </section>
+
+        <section class="group">
+          <h2>Spot Light</h2>
+          <button id="spotToggle">Spot Light: On</button>
+          <label>
+            Aim X
+            <input id="spotX" type="range" min="-8" max="8" step="0.1" value="0" />
+          </label>
+          <label>
+            Cutoff
+            <input id="spotCutoff" type="range" min="8" max="40" step="1" value="20" />
+          </label>
+        </section>
+      </aside>
+    </main>
+
+    <script src="../lib/cuon-matrix-cse160.js"></script>
+    <script src="../lib/cuon-utils.js"></script>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
