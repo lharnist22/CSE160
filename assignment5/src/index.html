@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 5 - Three.js Orbital Garden</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.165.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.165.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main id="app">
+      <canvas id="scene"></canvas>
+      <section class="hud" aria-label="Scene details">
+        <h1>Orbital Garden</h1>
+        <p>
+          Wow point: click the glowing crystals to retune the station. The
+          garden lights, drone beacon, and animated rings shift together.
+        </p>
+        <dl>
+          <div>
+            <dt>Model</dt>
+            <dd>Loaded local textured GLTF drone</dd>
+          </div>
+          <div>
+            <dt>Controls</dt>
+            <dd>Orbit with mouse, scroll to zoom</dd>
+          </div>
+        </dl>
+      </section>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
